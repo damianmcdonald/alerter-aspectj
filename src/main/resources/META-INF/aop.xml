@@ -1,0 +1,30 @@
+<aspectj>
+    <aspects>
+    	<!--  
+    		Define concrete aspects below.
+    		
+    		Some tips:
+    		
+    		1. Ensure that the concrete-aspect name is unique
+    		2. The concrete-aspect must extend eu.ohim.sp.alerter.aspects.AbstractAlertAspect
+    		3. The pointcut name must be alertMethod
+    		4. Customize the pointcut expression for your needs 
+    		
+    		Some useful links:
+    		https://eclipse.org/aspectj/doc/released/devguide/ltw-configuration.html
+    		https://guptavikas.wordpress.com/2010/04/15/aspectj-pointcut-expressions/
+    		http://howtodoinjava.com/2015/02/03/writing-spring-aop-aspectj-pointcut-expressions-with-examples/
+    		http://docs.spring.io/spring/docs/current/spring-framework-reference/html/aop.html#aop-common-pointcuts
+    	 -->
+		<concrete-aspect name="com.github.damianmcdonald.alerter.ConcreteAspect1" extends="com.github.damianmcdonald.alerter.aspects.AbstractAlertAspect">
+            <pointcut name="alertMethod" expression="execution(* com.github.damianmcdonald.alerter.service.WeavableService.*(..))" />
+        </concrete-aspect>
+    </aspects>
+    
+    <!-- 
+    	For a full list of weaver options, see the link below: 
+     	https://eclipse.org/aspectj/doc/released/devguide/ltw-configuration.html
+    -->
+    <weaver options="-verbose -debug -showWeaveInfo">
+    </weaver>
+</aspectj>

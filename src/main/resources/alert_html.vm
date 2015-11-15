@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <h1 style="color:red">Alert generated from alerter-aspectj</h1>
+    <div>
+      <h3>Alert Details</h3>
+      <table style="border: 1px solid black; border-collapse: collapse;">
+        <tr>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">DateTime</td>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">$info.timeStamp</td>
+        </tr>
+		<tr>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">Failing Class</td>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">$info.alertType</td>
+        </tr>
+		<tr>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">Failing Method</td>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">$info.alertMethod</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">Method Signature</td>
+          <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">$info.alertSignature</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h3>Attributes dump</h3>
+      <table style="border: 1px solid black; border-collapse: collapse;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid black;border-collapse: collapse;padding: 15px;">Attribute Name</th>
+            <th style="border: 1px solid black;border-collapse: collapse;padding: 15px;">Attribute Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          #foreach ($mapEntry in $infoBeanMap.entrySet())
+          <tr>
+            <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">$mapEntry.key</td>
+            <td style="border: 1px solid black;border-collapse: collapse;padding: 15px;">$mapEntry.value</td>
+          </tr>
+          #end
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

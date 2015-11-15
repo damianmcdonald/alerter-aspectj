@@ -1,0 +1,16 @@
+Alert generated from alerter-aspectj
+
+Alert details: 
+
+DateTime: 			$info.timeStamp
+Alert Class:		$info.alertType
+Alert Method:		$info.alertMethod
+Method Details: 	$info.alertSignature
+
+Attributes dump:
+
+#foreach ($mapEntry in $infoBeanMap.entrySet())
+Name:	$mapEntry.key
+Value:	$mapEntry.value
+#end
+
